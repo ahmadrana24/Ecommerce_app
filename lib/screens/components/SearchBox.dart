@@ -1,4 +1,4 @@
-import '../res/constant.dart';
+import 'package:Ecommerce_app/res/constant.dart';
 import 'package:flutter/material.dart';
 
 class SearchBox extends StatelessWidget {
