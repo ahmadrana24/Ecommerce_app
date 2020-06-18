@@ -1,5 +1,7 @@
+import 'package:Ecommerce_app/models/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CategoryList extends StatefulWidget {
   CategoryList({Key key}) : super(key: key);
@@ -21,26 +23,29 @@ class _CategoryListState extends State<CategoryList> {
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: Container(
-              alignment: Alignment.center,
-              padding:
-                  EdgeInsets.symmetric(horizontal: Constants().kdefaultpadding),
-              margin:
-                  EdgeInsets.symmetric(horizontal: Constants().kdefaultpadding),
-              decoration: BoxDecoration(
-                  color: index == selectedIndex
-                      ? Colors.white.withOpacity(0.4)
-                      : Colors.transparent,
-                  borderRadius: BorderRadius.circular(8)),
-              child: Text(
-                categories[index],
-                style: TextStyle(color: Colors.white),
+          return Consumer<Product>(
+            builder: (context, value, _) => GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                  value.productsSelection(categories[index]);
+                });
+              },
+              child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(
+                    horizontal: Constants().kdefaultpadding),
+                margin: EdgeInsets.symmetric(
+                    horizontal: Constants().kdefaultpadding),
+                decoration: BoxDecoration(
+                    color: index == selectedIndex
+                        ? Colors.white.withOpacity(0.4)
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(8)),
+                child: Text(
+                  categories[index],
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           );

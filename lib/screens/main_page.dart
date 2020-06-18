@@ -1,6 +1,7 @@
 import 'package:Ecommerce_app/models/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:Ecommerce_app/screens/details/details_scren.dart';
+import 'package:provider/provider.dart';
 import './components/CategoryList.dart';
 import './components/SearchBox.dart';
 import '../res/app_colors.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'components/product_card.dart';
 
 class MainPage extends StatelessWidget {
-  List<Product> product = products;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,23 +38,25 @@ class MainPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListView.builder(
-                  itemCount: products.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ProductCard(
-                      itemIndex: index,
-                      product: product[index],
-                      onPress: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => DetailsScreen(
-                              product: products[index],
+                Consumer<Product>(
+                  builder: (context, value, _) => ListView.builder(
+                    itemCount: products.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ProductCard(
+                        itemIndex: index,
+                        product: products[index],
+                        onPress: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => DetailsScreen(
+                                product: products[index],
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-                  },
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
