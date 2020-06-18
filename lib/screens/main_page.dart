@@ -1,20 +1,14 @@
 import 'package:Ecommerce_app/models/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:Ecommerce_app/screens/details/details_scren.dart';
-import 'package:get/get.dart';
-
 import './components/CategoryList.dart';
-
 import './components/SearchBox.dart';
-
 import '../res/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import 'components/product_card.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key key}) : super(key: key);
-
+  List<Product> product = products;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,11 +43,13 @@ class MainPage extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return ProductCard(
                       itemIndex: index,
-                      product: products[index],
+                      product: product[index],
                       onPress: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => DetailsScreen(),
+                            builder: (context) => DetailsScreen(
+                              product: products[index],
+                            ),
                           ),
                         );
                       },

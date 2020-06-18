@@ -1,11 +1,12 @@
+import 'package:Ecommerce_app/models/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:flutter/material.dart';
 
 import 'components/product_picture.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({Key key}) : super(key: key);
-
+  const DetailsScreen({Key key, this.product}) : super(key: key);
+  final Product product;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -38,12 +39,12 @@ class DetailsScreen extends StatelessWidget {
               children: <Widget>[
                 ProductPic(
                   size: size,
-                  image: 'assets/images/food2.jpg',
+                  image: product.image,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(40.0),
                   child: Text(
-                    'heeeeelllllllooooooooooooooo',
+                    product.title,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                 ),

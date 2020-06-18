@@ -1,3 +1,6 @@
+import 'package:Ecommerce_app/models/product.dart';
+import 'package:provider/provider.dart';
+
 import './res/app_colors.dart';
 import './screens/main_page.dart';
 import 'package:flutter/material.dart';
@@ -12,16 +15,19 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ecommerce App',
-      theme: ThemeData(
-        primaryColor: AppColors().kPrimaryColor,
-        textTheme: GoogleFonts.poppinsTextTheme(
-          Theme.of(context).textTheme,
+    return ChangeNotifierProvider.value(
+      value: Product(),
+      child: MaterialApp(
+        title: 'Ecommerce App',
+        theme: ThemeData(
+          primaryColor: AppColors().kPrimaryColor,
+          textTheme: GoogleFonts.poppinsTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        home: MainPage(),
       ),
-      home: MainPage(),
     );
   }
 }

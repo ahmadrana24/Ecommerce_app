@@ -1,9 +1,21 @@
-class Product {
+import 'package:flutter/cupertino.dart';
+
+class Product with ChangeNotifier {
   final int id;
 
   final String title, image, category;
 
   Product({this.category, this.id, this.title, this.image});
+
+  List<Product> allProducts() {
+    return products;
+  }
+
+  List<Product> productsSelection(String val) {
+    List<Product> sh = products.where((element) => element.category == 'shirt');
+    notifyListeners();
+    return sh;
+  }
 }
 
 // list of products
