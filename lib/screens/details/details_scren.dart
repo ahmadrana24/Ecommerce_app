@@ -38,6 +38,7 @@ class DetailsScreen extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ProductPic(
+                  itemid: product.id,
                   size: size,
                   image: product.image,
                 ),

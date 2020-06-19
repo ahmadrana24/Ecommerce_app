@@ -1,13 +1,14 @@
-
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:flutter/material.dart';
 
 class ProductPic extends StatelessWidget {
   const ProductPic({
     Key key,
-    @required this.size, this.image,
+    @required this.size,
+    this.image,
+    this.itemid,
   }) : super(key: key);
-
+  final int itemid;
   final Size size;
   final String image;
   @override
@@ -26,11 +27,14 @@ class ProductPic extends StatelessWidget {
                 color: Colors.white,
                 // shape: BoxShape.circle,
                 borderRadius: BorderRadius.circular(50)),
-            child: Image.asset(
-              image,
-              height: size.width * .7,
-              width: size.width * .7,
-              // fit: BoxFit.values[5],
+            child: Hero(
+              tag: itemid,
+              child: Image.asset(
+                image,
+                height: size.width * .7,
+                width: size.width * .7,
+                // fit: BoxFit.values[5],
+              ),
             ),
           ),
         ],

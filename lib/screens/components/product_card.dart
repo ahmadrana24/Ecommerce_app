@@ -48,9 +48,12 @@ class ProductCard extends StatelessWidget {
                     horizontal: Constants().kdefaultpadding),
                 height: 160,
                 width: 200,
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.cover,
+                child: Hero(
+                  tag: product.id,
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
