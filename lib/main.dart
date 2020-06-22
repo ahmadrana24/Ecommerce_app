@@ -1,4 +1,4 @@
-import 'package:Ecommerce_app/models/product.dart';
+import 'package:Ecommerce_app/providers/product.dart';
 import 'package:provider/provider.dart';
 
 import './res/app_colors.dart';
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Ecommerce App',
         theme: ThemeData(
-          primaryColor: AppColors().kPrimaryColor,
+          primaryColor: AppColors().primaryColor,
           textTheme: GoogleFonts.poppinsTextTheme(
             Theme.of(context).textTheme,
           ),

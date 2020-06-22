@@ -1,4 +1,4 @@
-import 'package:Ecommerce_app/models/product.dart';
+import 'package:Ecommerce_app/providers/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:Ecommerce_app/screens/details/details_scren.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors().kPrimaryColor,
+      backgroundColor: AppColors().primaryColor,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,

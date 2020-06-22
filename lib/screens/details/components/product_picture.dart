@@ -24,12 +24,13 @@ class ProductPic extends StatelessWidget {
             width: size.width * .7,
             height: size.width * .7,
             decoration: BoxDecoration(
-                color: Colors.white,
-                // shape: BoxShape.circle,
-                borderRadius: BorderRadius.circular(50)),
+              color: Colors.white,
+              // shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(50),
+            ),
             child: Hero(
               tag: itemid,
-              child: Image.asset(
+              child: Image.network(
                 image,
                 height: size.width * .7,
                 width: size.width * .7,
