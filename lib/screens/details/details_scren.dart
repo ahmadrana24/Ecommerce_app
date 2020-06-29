@@ -54,6 +54,7 @@ class DetailsScreen extends StatelessWidget {
           ),
           FlatButton(
             onPressed: () {
+              product.snapshotsData();
               Navigator.of(context).pop();
             },
             child: Container(

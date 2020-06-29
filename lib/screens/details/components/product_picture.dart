@@ -8,7 +8,7 @@ class ProductPic extends StatelessWidget {
     this.image,
     this.itemid,
   }) : super(key: key);
-  final int itemid;
+  final String itemid;
   final Size size;
   final String image;
   @override
