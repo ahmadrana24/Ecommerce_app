@@ -15,7 +15,7 @@ class ProductPic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // width: double.infinity,
-      margin: EdgeInsets.symmetric(vertical: Constants().kdefaultpadding),
+      margin: EdgeInsets.symmetric(vertical: Constants.kdefaultpadding),
       height: size.width * 0.7,
       // color: Colors.black,
       child: Stack(

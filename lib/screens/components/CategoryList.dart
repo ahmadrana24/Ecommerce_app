@@ -17,7 +17,7 @@ class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: Constants().kdefaultpadding / 4),
+      margin: EdgeInsets.symmetric(vertical: Constants.kdefaultpadding / 4),
       height: 25,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -33,10 +33,10 @@ class _CategoryListState extends State<CategoryList> {
               },
               child: Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(
-                    horizontal: Constants().kdefaultpadding),
-                margin: EdgeInsets.symmetric(
-                    horizontal: Constants().kdefaultpadding),
+                padding:
+                    EdgeInsets.symmetric(horizontal: Constants.kdefaultpadding),
+                margin:
+                    EdgeInsets.symmetric(horizontal: Constants.kdefaultpadding),
                 decoration: BoxDecoration(
                     color: index == selectedIndex
                         ? Colors.white.withOpacity(0.4)

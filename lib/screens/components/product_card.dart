@@ -17,8 +17,8 @@ class ProductCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: Constants().kdefaultpadding,
-          vertical: Constants().kdefaultpadding / 2),
+          horizontal: Constants.kdefaultpadding,
+          vertical: Constants.kdefaultpadding / 2),
       height: 160,
       child: InkWell(
         onTap: onPress,
@@ -44,8 +44,8 @@ class ProductCard extends StatelessWidget {
               right: 0,
               top: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: Constants().kdefaultpadding),
+                padding:
+                    EdgeInsets.symmetric(horizontal: Constants.kdefaultpadding),
                 height: 160,
                 width: 200,
                 child: Hero(
@@ -61,8 +61,8 @@ class ProductCard extends StatelessWidget {
               left: 0,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: Constants().kdefaultpadding,
-                  vertical: Constants().kdefaultpadding / 2,
+                  horizontal: Constants.kdefaultpadding,
+                  vertical: Constants.kdefaultpadding / 2,
                 ),
                 height: 136,
                 width: size.width - 210,

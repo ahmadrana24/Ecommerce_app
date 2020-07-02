@@ -1,7 +1,6 @@
 import 'package:Ecommerce_app/providers/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
 import 'package:flutter/material.dart';
-
 import 'components/product_picture.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -27,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
           Container(
             width: double.infinity,
             padding:
-                EdgeInsets.symmetric(horizontal: Constants().kdefaultpadding),
+                EdgeInsets.symmetric(horizontal: Constants.kdefaultpadding),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(60),
@@ -60,7 +59,7 @@ class DetailsScreen extends StatelessWidget {
             child: Container(
               height: size.width * .1,
               width: size.width * .6,
-              margin: EdgeInsets.only(bottom: Constants().kdefaultpadding),
+              margin: EdgeInsets.only(bottom: Constants.kdefaultpadding),
               decoration: BoxDecoration(
                 color: Colors.amber,
                 borderRadius: BorderRadius.circular(30),

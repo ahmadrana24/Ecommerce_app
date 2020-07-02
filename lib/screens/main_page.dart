@@ -1,8 +1,8 @@
 import 'package:Ecommerce_app/providers/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
+import 'package:Ecommerce_app/screens/addProduct/add_product.dart';
 import 'package:Ecommerce_app/screens/details/details_scren.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
 import './components/CategoryList.dart';
 import './components/SearchBox.dart';
 import '../res/app_colors.dart';
@@ -14,6 +14,13 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors().primaryColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (ctx) => AddProduct()));
+        },
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
@@ -24,7 +31,7 @@ class MainPage extends StatelessWidget {
           SearchBox(),
           CategoryList(),
           SizedBox(
-            height: Constants().kdefaultpadding / 2,
+            height: Constants.kdefaultpadding / 2,
           ),
           Expanded(
             child: Stack(

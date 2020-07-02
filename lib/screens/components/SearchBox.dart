@@ -10,11 +10,11 @@ class SearchBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(
-        Constants().kdefaultpadding,
+        Constants.kdefaultpadding,
       ),
       padding: EdgeInsets.symmetric(
-        horizontal: Constants().kdefaultpadding,
-        vertical: Constants().kdefaultpadding / 4,
+        horizontal: Constants.kdefaultpadding,
+        vertical: Constants.kdefaultpadding / 4,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),

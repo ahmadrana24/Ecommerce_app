@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  final kdefaultpadding = 20.0;
+  static const kdefaultpadding = 20.0;
   BoxShadow kBoxShadow = BoxShadow(
     color: Colors.grey.withOpacity(0.5),
     spreadRadius: 3,
