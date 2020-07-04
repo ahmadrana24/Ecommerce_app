@@ -33,48 +33,70 @@ class _AddProductState extends State<AddProduct> {
         title: Text('ADD PRODUCT'),
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: size.height * 0.7,
-            decoration: BoxDecoration(
-              color: AppColors().primaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(60),
-                bottomRight: Radius.circular(60),
+      body: SingleChildScrollView(
+        // controller: controller,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              height: size.height * 0.7,
+              decoration: BoxDecoration(
+                color: AppColors().primaryColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(60),
+                  bottomRight: Radius.circular(60),
+                ),
+              ),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.values[5],
+                  children: <Widget>[
+                    RoundedTextField(
+                      label: 'Title',
+                      controller: _titleController,
+                    ),
+                    RoundedTextField(
+                      label: 'Image URL',
+                      controller: _imageController,
+                    ),
+                    RoundedTextField(
+                      label: 'Title',
+                      controller: _categoryController,
+                    ),
+                  ],
+                ),
               ),
             ),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.values[5],
-                children: <Widget>[
-                  RoundedTextField(
-                    label: 'Title',
-                    controller: _titleController,
-                  ),
-                  RoundedTextField(
-                    label: 'Image URL',
-                    controller: _imageController,
-                  ),
-                  RoundedTextField(
-                    label: 'Title',
-                    controller: _categoryController,
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 30,
             ),
-          ),
-          FlatButton.icon(
-            icon: Icon(Icons.add),
-            onPressed: () {},
-            label: Text('Add'),
-            // child: Container(
-            //   child: Text('Add'),
-            // ),
-            color: Colors.blueAccent,
-          )
-        ],
+            // Spacer(),
+            Container(
+              width: size.width * 0.5,
+              height: size.height * 0.07,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amber,
+              ),
+              child: FlatButton.icon(
+                icon: Icon(Icons.add),
+                onPressed: () {},
+                label: Text(
+                  'Add',
+                  textScaleFactor: 1.4,
+                ),
+                // child: Container(
+                //   child: Text('Add'),
+                // ),
+                // clipBehavior: ,
+                // textColor: Colors.white,
+                // clipBehavior: Clip.values[3],
+                textColor: Colors.white,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
