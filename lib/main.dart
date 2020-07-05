@@ -1,6 +1,5 @@
 import 'package:Ecommerce_app/providers/product.dart';
 import 'package:provider/provider.dart';
-
 import './res/app_colors.dart';
 import './screens/main_page.dart';
 import 'package:flutter/material.dart';

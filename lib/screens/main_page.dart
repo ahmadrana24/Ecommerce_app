@@ -1,5 +1,6 @@
 import 'package:Ecommerce_app/providers/product.dart';
 import 'package:Ecommerce_app/res/constant.dart';
+import 'package:Ecommerce_app/res/screen_size_utils.dart';
 import 'package:Ecommerce_app/screens/addProduct/add_product.dart';
 import 'package:Ecommerce_app/screens/details/details_scren.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,6 +13,10 @@ import 'components/product_card.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    ScreenUtil.instance = ScreenUtil(width: 414, height: 896)..init(context);
+    DS.width = size.width;
+    DS.height = size.height;
     return Scaffold(
       backgroundColor: AppColors().primaryColor,
       floatingActionButton: FloatingActionButton(

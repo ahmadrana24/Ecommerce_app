@@ -47,12 +47,12 @@ class RoundedTextField extends StatelessWidget {
                   filled: true,
                   errorMaxLines: 1,
                   errorStyle: TextStyle(
-                      // fontSize: DS.setSP(12),
-                      ),
+                    fontSize: DS.setSP(12),
+                  ),
                 ),
                 controller: controller,
                 style: TextStyle(
-                  // fontSize: DS.setSP(15),
+                  fontSize: DS.setSP(15),
                   letterSpacing: 1.1,
                 ),
               ),

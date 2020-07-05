@@ -1,5 +1,5 @@
+import 'package:Ecommerce_app/providers/product.dart';
 import 'package:Ecommerce_app/res/app_colors.dart';
-import 'package:Ecommerce_app/res/screen_size_utils.dart';
 import 'package:Ecommerce_app/widgets/rounded_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -34,9 +34,7 @@ class _AddProductState extends State<AddProduct> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        // controller: controller,
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               height: size.height * 0.7,
@@ -61,7 +59,7 @@ class _AddProductState extends State<AddProduct> {
                       controller: _imageController,
                     ),
                     RoundedTextField(
-                      label: 'Title',
+                      label: 'Category',
                       controller: _categoryController,
                     ),
                   ],
@@ -71,7 +69,6 @@ class _AddProductState extends State<AddProduct> {
             SizedBox(
               height: 30,
             ),
-            // Spacer(),
             Container(
               width: size.width * 0.5,
               height: size.height * 0.07,
@@ -81,17 +78,18 @@ class _AddProductState extends State<AddProduct> {
               ),
               child: FlatButton.icon(
                 icon: Icon(Icons.add),
-                onPressed: () {},
+                onPressed: () {
+                  Map<String, dynamic> productData = {
+                    'category': _categoryController.text.toLowerCase(),
+                    'image': _imageController.text.toLowerCase(),
+                    'title': _titleController.text.toLowerCase(),
+                  };
+                  Product().addProduct(productData);
+                },
                 label: Text(
                   'Add',
                   textScaleFactor: 1.4,
                 ),
-                // child: Container(
-                //   child: Text('Add'),
-                // ),
-                // clipBehavior: ,
-                // textColor: Colors.white,
-                // clipBehavior: Clip.values[3],
                 textColor: Colors.white,
               ),
             )
