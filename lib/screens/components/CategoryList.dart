@@ -14,6 +14,7 @@ class _CategoryListState extends State<CategoryList> {
   int selectedIndex = 0;
   List categories = ['All', 'Shirt', 'furniture', 'food'];
 
+  String selectedVal = 'All';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +29,7 @@ class _CategoryListState extends State<CategoryList> {
               onTap: () {
                 setState(() {
                   selectedIndex = index;
+                  selectedVal = categories[index];
                   value.productsSelection(categories[index]);
                 });
               },

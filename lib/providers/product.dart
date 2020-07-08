@@ -18,9 +18,11 @@ class Product with ChangeNotifier {
 
   void productsSelection(String val) {
     setproducts();
+    // String x = ;
+    // print(Firestore.instance.collection('products').document().documentID);
     // if (val == 'Shirt') {
     //   products =
-    //       products.where((element) => element.category == 'Shirt').toList();
+    // products.where((element) => element.category == 'Shirt').toList();
     // }
     // if (val == 'furniture') {
     //   products =
